@@ -64,6 +64,8 @@ footer {
 .btn:hover {
   background-color: #303f9f;
 }
+
+/* === CONTAINER DE CARDS COM ROLAGEM === */
 .cards-container {
   display: flex;
   overflow-x: auto;
@@ -88,11 +90,13 @@ footer {
   margin-bottom: 0.5rem;
 }
 
+/* === BOTÕES === */
 .card-links {
   margin-top: 0.5rem;
 }
 
-.card-links a, .card-links button {
+.card-links a,
+.card-links button {
   display: inline-block;
   margin: 0.2rem;
   padding: 0.5rem 0.8rem;
@@ -103,22 +107,26 @@ footer {
   border-radius: 4px;
   font-size: 0.9rem;
   cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
-.card-links a:hover, .card-links button:hover {
+.card-links a:hover,
+.card-links button:hover {
   background-color: #303f9f;
 }
 
-/* MODAL */
+/* === MODAIS === */
 .modal {
   display: none;
   position: fixed;
   z-index: 100;
   padding-top: 80px;
-  left: 0; top: 0;
-  width: 100%; height: 100%;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
   overflow: auto;
-  background-color: rgba(0,0,0,0.7);
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .modal-content {
@@ -145,6 +153,17 @@ footer {
   float: right;
   cursor: pointer;
 }
+
 .close:hover {
   color: #000;
+}
+
+/* === OPCIONAL: esconder barra de rolagem em navegadores modernos === */
+.cards-container::-webkit-scrollbar {
+  display: none;
+}
+
+.cards-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
