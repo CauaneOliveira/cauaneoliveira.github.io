@@ -20,50 +20,64 @@
   </section>
 
   <section id="projetos">
-  <h2>Projetos</h2>
-  <div class="cards-container">
-    <!-- CARD 1 -->
-    <div class="card">
-      <img src="projeto1.jpg" alt="Helpdesk" />
-      <h3>Helpdesk Interno</h3>
-      <p>Chamados internos com requisitos, UML e protótipo.</p>
-      <div class="card-links">
-        <a href="https://github.com/seurepositorio/projeto-helpdesk" target="_blank">GitHub</a>
-        <button onclick="openModal('modal1')">Documentação</button>
+    <h2>Projetos</h2>
+    <div class="cards-container">
+      <div class="card">
+        <img src="projeto1.jpg" alt="Helpdesk" />
+        <h3>Helpdesk Interno</h3>
+        <p>Chamados internos com requisitos, UML e protótipo.</p>
+        <div class="card-links">
+          <a href="https://github.com/seurepositorio/projeto-helpdesk" target="_blank">GitHub</a>
+          <button onclick="openModal('modal1')">Documentação</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="dashboard.jpg" alt="Dashboard TI" />
+        <h3>Dashboard de TI</h3>
+        <p>KPIs com Power BI: SLA, disponibilidade e performance.</p>
+        <div class="card-links">
+          <a href="https://github.com/seurepositorio/dashboard-ti" target="_blank">GitHub</a>
+          <button onclick="openModal('modal2')">Documentação</button>
+        </div>
       </div>
     </div>
 
-    <!-- CARD 2 -->
-    <div class="card">
-      <img src="dashboard.jpg" alt="Dashboard TI" />
-      <h3>Dashboard de TI</h3>
-      <p>KPIs de TI com Power BI. Foco em SLA e disponibilidade.</p>
-      <div class="card-links">
-        <a href="https://github.com/seurepositorio/dashboard-ti" target="_blank">GitHub</a>
-        <button onclick="openModal('modal2')">Documentação</button>
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('modal1')">&times;</span>
+        <h3>Documentação - Helpdesk</h3>
+        <p>📄 Documento de requisitos, fluxogramas, casos de uso e UML.</p>
+        <a href="documentacao-helpdesk.pdf" target="_blank">Ver PDF</a>
       </div>
     </div>
-  </div>
 
-  <!-- MODAIS DE DOCUMENTAÇÃO -->
-  <div id="modal1" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal('modal1')">&times;</span>
-      <h3>Documentação - Helpdesk</h3>
-      <p>📄 Documento de requisitos, fluxogramas, casos de uso e UML.</p>
-      <a href="documentacao-helpdesk.pdf" target="_blank">Ver PDF</a>
+    <div id="modal2" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('modal2')">&times;</span>
+        <h3>Documentação - Dashboard de TI</h3>
+        <p>📄 Explicações dos indicadores, público-alvo e visões do Power BI.</p>
+        <a href="documentacao-dashboard.pdf" target="_blank">Ver PDF</a>
+      </div>
     </div>
-  </div>
-
-  <div id="modal2" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal('modal2')">&times;</span>
-      <h3>Documentação - Dashboard de TI</h3>
-      <p>📄 Explicações dos indicadores, público-alvo e visões do Power BI.</p>
-      <a href="documentacao-dashboard.pdf" target="_blank">Ver PDF</a>
-    </div>
-  </div>
   </section>
+
+  <script>
+  function openModal(id) {
+    document.getElementById(id).style.display = "block";
+  }
+  function closeModal(id) {
+    document.getElementById(id).style.display = "none";
+  }
+  window.onclick = function(event) {
+    const modals = document.querySelectorAll(".modal");
+    modals.forEach(modal => {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    });
+  }
+  </script>
 
 
   <section id="curriculo">
@@ -82,24 +96,5 @@
   <footer>
     <p>© 2025 Cauane Oliveira</p>
   </footer>
-  <script>
-  function openModal(id) {
-    document.getElementById(id).style.display = "block";
-  }
-  
-  function closeModal(id) {
-    document.getElementById(id).style.display = "none";
-  }
-  
-  window.onclick = function(event) {
-    const modals = document.querySelectorAll(".modal");
-    modals.forEach(modal => {
-      if (event.target == modal) {
-        modal.style.display = "none";
-      }
-    });
-  }
-</script>
-
 </body>
 </html>
